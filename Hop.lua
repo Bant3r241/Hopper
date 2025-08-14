@@ -19,7 +19,10 @@ local function loadExternalScriptAndTeleport()
         warn("Failed to execute external script: " .. err)
     end
 
-    -- Step 2: Teleport to a new instance (new server) of the same game
+    -- Step 2: Wait for 3 seconds to ensure everything has loaded
+    wait(3)  -- Wait for 3 seconds
+
+    -- Step 3: Teleport to a new instance (new server) of the same game
     local teleportSuccess, teleportMessage = pcall(function()
         TeleportService:Teleport(PLACE_ID, player)
     end)
