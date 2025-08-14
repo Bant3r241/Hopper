@@ -1,17 +1,10 @@
-local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
 local Players = game:GetService("Players")
 
--- Function to execute the loadstring and server hop
-local function executeAndHop()
-    -- Execute the loadstring (this loads and runs the script from the given URL)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Bant3r241/whatever/refs/heads/main/main.lua"))()
-
-    -- Wait a little bit to ensure the loadstring has fully executed
-    wait(2)
-
+-- Function to server hop
+local function serverHop()
     -- Game ID for the game you're in
-    local gameId = 109983668079237
+    local gameId = 109983668079237  -- Replace this with your actual game ID if different
 
     -- Teleport to another random server in the same game
     local success, errorMessage = pcall(function()
@@ -25,5 +18,5 @@ local function executeAndHop()
     end
 end
 
--- Execute the function
-executeAndHop()
+-- Call the server hop function
+serverHop()
